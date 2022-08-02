@@ -48,5 +48,9 @@ public class HomePage extends Base {
         //data[1][2]="Nonrestricted user";
         return data;
     }
+    @AfterTest
+    public void Teardown(){
+        driver.quit();
+    }
 
 }
