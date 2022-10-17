@@ -1,5 +1,6 @@
 package resources;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -21,6 +22,8 @@ public class Base {
         prop.load(in);
         String browser = prop.getProperty("browser");
         if (browser.equals("chrome")) {
+            WebDriverManager.chromedriver().setup();
+
             driver = new ChromeDriver();
         } else if (browser.equals("firefox")) {
             driver = new FirefoxDriver();
